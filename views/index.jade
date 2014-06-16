@@ -1,5 +1,24 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  script(type="text/javascript").
+    $(document).ready(function() {
+      Select.init({className: 'select-theme-dark'});
+      new WOW().init();
+
+      $('#city_select').on('change', function() {
+        if($('#city_select').val() !== 'WHERE DO YOU LIVE?') {
+
+        }
+      });
+    });
+
+  #landing
+    #background-color
+      #city.wow.bounceIn
+        select#city_select
+          option WHERE DO YOU LIVE?
+          option SAN FRANCISCO
+          option NEW YORK
+
+      //- #neighbourhood.wow.bounceIn Hi
